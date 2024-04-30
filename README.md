@@ -50,11 +50,11 @@ Example input image:
 
 The image is classified as "Residential".
 
-Prediction:
+### Class Probabilities Prediction
 
 ![Prediction](outputs/Sample%202%20Grid.png)
 
-Segmented:
+### Segmented Image
 
 ![Segmented Image](outputs/Sample%202%20Segmented.png)
 
