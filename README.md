@@ -1,37 +1,59 @@
-# README: 
+# EuroSAT Image Segmentation
 
-The EuroSAT is a dataset for land use and classification that consists of 27,000 satellite images covering 10 different classes. The classes can be such as agriculture, industrial and more. 
+This repo defines a U-Net model for image segmentation of the EuroSAT dataset. The EuroSAT is a dataset of 27,000 geo images. Each image is 64-by-64 and colored.
 
+The `models.py` script contains the definitions for the U-Net model and 2-layer CNN classifier.
 
-To run the code you simply need to run each block of the program and when you finish running all the blocks the program will give you an estimate of how correct each part was classified by the program.
+The `Train.ipynb` notebook is used to train both models.
 
+The `ModelAnalysis.ipynb` notebook is used to showcase the trained model.
 
-To install the dependencies you simply have to run the first block of code and that will be able to provide you all the data sets that you need and the libraries that you need for the code to run and test.
+# Dependencies
 
+Required dependencies:
+- Pytorch (CUDA)
+- Pytorch Vision
+- Numpy
+- Scipy
+- Matplotlib
+- Scikit Image
+- TQDM
 
-The dependencies that were used was PyTorch, NumPy, MatPlot.
+Note: this repo assumes the user has CUDA support pytorch.
 
+Installation:
 
-PyTorch – used for the classification (CNN) and segmentation (U -Net) model for image classification. Implements loss functions. Used for data loaders and datasets for efficient preprocessing of the datasets. We use this to predict the pixels
+```
+    pip install tqdm scikit-image matplotlib numpy scipy
+```
 
+To install CUDA-supported pytorch, refer to [Pytorch](https://pytorch.org/get-started/locally/).
 
-NumPy – this provides mathematical functions for calculations. This is used to convert the images such as resizing and cropping. Used to calculate accuracy, precision base on model prediction.
+# Train
 
+1. Download the dataset from the [EuroSAT repository](https://github.com/phelber/eurosat).
+2. Unzip it into the workspace root directory.
+3. Renaming it into `dataset`. 
+4. Run the `Train.ipynb` notebook.
 
-MatPlot – this was used for sample images from different land cover classes. Used for the graphs which visualize the loss.
- 
-The code will get all image that is provided in the data set and the program will classify which part belongs. This is done through calculating rte proabability of each pixel and which class it would belong into. The output will be numbers that represent the probability of each pixel of each class.
+# Example
 
+Example input image:
 
-## Resources:
+![Input Image](outputs/Sample%202.png)
+
+The image is classified as "Residential".
+
+Segmented:
+
+![Segmented Image](outputs/Sample%202%20Segmented.png)
+
+The model marked the blue region as residential, the red region as highway, and the yellow region as river.
+
+# Resources
+
+[EuraSAT: Land Use and Land Cover Classification with Sentinel-2](https://github.com/phelber/eurosat)
 
 Helber, Patrick, et al. “Introducing eurosat: A novel dataset and deep learning benchmark for land use and land cover classification.” IGARSS 2018 - 2018 IEEE International Geoscience and Remote Sensing Symposium, July 2018, https://doi.org/10.1109/igarss.2018.8519248. 
 
 Helber, Patrick, et al. “EuroSAT: A novel dataset and deep learning benchmark for land use and land cover classification.” IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing, vol. 12, no. 7, July 2019, pp. 2217–2226, https://doi.org/10.1109/jstars.2019.2918242. 
-
-
-Websites that use those 2 articles:
-
-EuroSat Dataset (kaggle.com)
-
-GitHub - phelber/EuroSAT: EuroSAT: Land Use and Land Cover Classification with Sentinel-2
