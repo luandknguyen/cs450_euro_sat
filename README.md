@@ -24,15 +24,13 @@ Required dependencies:
 - Scikit Image
 - TQDM
 
-Note: this repo assumes the user has CUDA support pytorch.
-
 Installation:
 
 ```
     pip install tqdm scikit-image matplotlib numpy scipy
 ```
 
-To install CUDA-supported pytorch, refer to [Pytorch](https://pytorch.org/get-started/locally/).
+To install Pytorch, refer to [Pytorch](https://pytorch.org/get-started/locally/).
 
 # Train
 
