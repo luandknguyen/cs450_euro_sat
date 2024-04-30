@@ -34,5 +34,7 @@ Helber, Patrick, et al. “EuroSAT: A novel dataset and deep learning benchmark 
 
 
 Websites that use those 2 articles:
+
 EuroSat Dataset (kaggle.com)
+
 GitHub - phelber/EuroSAT: EuroSAT: Land Use and Land Cover Classification with Sentinel-2
