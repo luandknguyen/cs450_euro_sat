@@ -18,7 +18,7 @@ PyTorch – used for the classification (CNN) and segmentation (U -Net) model fo
 NumPy – this provides mathematical functions for calculations. This is used to convert the images such as resizing and cropping. Used to calculate accuracy, precision base on model prediction.
 
 
-MatPlot – this was used for the images
+MatPlot – this was used for sample images from different land cover classes. 
  
 The code will get all image that is provided in the data set and the program will classify which part belongs. This is done through calculating rte proabability of each pixel and which class it would belong into. The output will be numbers that represent the probability of each pixel of each class.
 
