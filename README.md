@@ -1,6 +1,6 @@
 # EuroSAT Image Segmentation
 
-This repo defines a U-Net model for image segmentation of the EuroSAT dataset. The EuroSAT is a dataset of geo 27,000 images. Each image is 64-by-64 and colored.
+This repo defines a U-Net model for image segmentation of the EuroSAT dataset. The EuroSAT is a dataset of 27,000 geo images. Each image is 64-by-64 and colored.
 
 The `models.py` script contains the definitions for the U-Net model and 2-layer CNN classifier.
 
