@@ -1,3 +1,8 @@
+# Project Introduction
+Our team looks to identify land use via satellite imaging through the use of computer vision AI models. These have practical and beneficial uses in fields such as city planning or environmental monitoring as it allows you to classify large land-masses accurately and quickly.
+
+Using the EuroSAT dataset, we looked to improve upon the AI classification model that a previous research group had used to identify land use using satelite imaging [EuroSAT repository](https://github.com/phelber/eurosat). This team used a classifier model (2-layer CNN) using Sentinel-2 satellite images w/ a 12-spectral band dataset. Our team looks to improve upon this model by using a U-Net network to predict the class of each pixel within the RGB dataset. 
+
 # EuroSAT Image Segmentation
 
 This repo defines a U-Net model for image segmentation of the EuroSAT dataset. The EuroSAT is a dataset of 27,000 geo images. Each image is 64-by-64 and colored.
@@ -31,7 +36,7 @@ To install CUDA-supported pytorch, refer to [Pytorch](https://pytorch.org/get-st
 
 # Train
 
-1. Download the dataset from the [EuroSAT repository](https://github.com/phelber/eurosat).
+1. Download the RGB dataset from the [EuroSAT repository](https://github.com/phelber/eurosat).
 2. Unzip it into the workspace root directory.
 3. Renaming it into `dataset`.
 4. If you make a new file and label it `dataset`, ensure contents mimic the original `EuroSAT` folder (has folders with classification of images)
