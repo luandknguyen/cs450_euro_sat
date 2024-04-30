@@ -29,6 +29,13 @@ Installation:
 
 To install CUDA-supported pytorch, refer to [Pytorch](https://pytorch.org/get-started/locally/).
 
+# Train
+
+1. Download the dataset from [EuroSAT repo](https://github.com/phelber/eurosat).
+2. Unzip it into the workspace root directory.
+3. Renaming it into `dataset`. 
+4. Run the `Train.ipynb` notebook.
+
 # Example
 
 Example input image:
@@ -44,6 +51,8 @@ Segmented:
 The model marked the blue region as residential, the red region as highway, and the yellow region as river.
 
 # Resources
+
+[EuraSAT: Land Use and Land Cover Classification with Sentinel-2](https://github.com/phelber/eurosat)
 
 Helber, Patrick, et al. “Introducing eurosat: A novel dataset and deep learning benchmark for land use and land cover classification.” IGARSS 2018 - 2018 IEEE International Geoscience and Remote Sensing Symposium, July 2018, https://doi.org/10.1109/igarss.2018.8519248. 
 
