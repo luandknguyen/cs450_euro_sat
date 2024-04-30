@@ -1,4 +1,4 @@
-README: 
+# README: 
 
 The EuroSAT is a dataset for land use and classification that consists of 27,000 satellite images covering 10 different classes. The classes can be such as agriculture, industrial and more. 
 
@@ -23,10 +23,7 @@ MatPlot – this was used for the images
 The code will get all image that is provided in the data set and the program will classify which part belongs. This is done through calculating rte proabability of each pixel and which class it would belong into. The output will be numbers that represent the probability of each pixel of each class.
 
 
-
-
- 
-Resources:
+## Resources:
 
 Helber, Patrick, et al. “Introducing eurosat: A novel dataset and deep learning benchmark for land use and land cover classification.” IGARSS 2018 - 2018 IEEE International Geoscience and Remote Sensing Symposium, July 2018, https://doi.org/10.1109/igarss.2018.8519248. 
 
