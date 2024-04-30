@@ -29,7 +29,10 @@ The code will get all image that is provided in the data set and the program wil
 Resources:
 
 Helber, Patrick, et al. “Introducing eurosat: A novel dataset and deep learning benchmark for land use and land cover classification.” IGARSS 2018 - 2018 IEEE International Geoscience and Remote Sensing Symposium, July 2018, https://doi.org/10.1109/igarss.2018.8519248. 
+
 Helber, Patrick, et al. “EuroSAT: A novel dataset and deep learning benchmark for land use and land cover classification.” IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing, vol. 12, no. 7, July 2019, pp. 2217–2226, https://doi.org/10.1109/jstars.2019.2918242. 
+
+
 Websites that use those 2 articles:
 EuroSat Dataset (kaggle.com)
 GitHub - phelber/EuroSAT: EuroSAT: Land Use and Land Cover Classification with Sentinel-2
