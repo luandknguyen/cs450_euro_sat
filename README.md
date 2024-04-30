@@ -31,7 +31,7 @@ To install CUDA-supported pytorch, refer to [Pytorch](https://pytorch.org/get-st
 
 # Train
 
-1. Download the dataset from [EuroSAT repo](https://github.com/phelber/eurosat).
+1. Download the dataset from the [EuroSAT repository](https://github.com/phelber/eurosat).
 2. Unzip it into the workspace root directory.
 3. Renaming it into `dataset`. 
 4. Run the `Train.ipynb` notebook.
