@@ -1,6 +1,7 @@
 import torch
 import torch.nn
 import torch.nn.functional
+from typing import Callable, Tuple, List, Any, Union
 
 class EncoderBlock(torch.nn.Module):
     """Encoder block."""
@@ -66,12 +67,12 @@ class DecoderBlock(torch.nn.Module):
 
 class Encoder(torch.nn.Module):
     """Encoder."""
-    def __init__(self):
+    def __init__(self, input_channels: int, channels: List[int]):
         super().__init__()
-        self.block_1 = EncoderBlock(in_channels=3, out_channels=8)
-        self.block_2 = EncoderBlock(in_channels=8, out_channels=12)
-        self.block_3 = EncoderBlock(in_channels=12, out_channels=16)
-        self.block_4 = EncoderBlock(in_channels=16, out_channels=20, max_pooling=False)
+        self.block_1 = EncoderBlock(in_channels=input_channels, out_channels=channels[0])
+        self.block_2 = EncoderBlock(in_channels=channels[0], out_channels=channels[1])
+        self.block_3 = EncoderBlock(in_channels=channels[1], out_channels=channels[2])
+        self.block_4 = EncoderBlock(in_channels=channels[2], out_channels=channels[3], max_pooling=False)
 
     def forward(self, inputs):
         """Forwarding."""
@@ -84,13 +85,13 @@ class Encoder(torch.nn.Module):
 
 class Decoder(torch.nn.Module):
     """Decoder."""
-    def __init__(self, n_classes: int):
+    def __init__(self, n_classes: int, channels: List[int]):
         super().__init__()
-        self.block_1 = DecoderBlock(in_channels=36, out_channels=16)
-        self.block_2 = DecoderBlock(in_channels=28, out_channels=12)
-        self.block_3 = DecoderBlock(in_channels=20, out_channels=8)
+        self.block_1 = DecoderBlock(in_channels=channels[3] + channels[2], out_channels=channels[2])
+        self.block_2 = DecoderBlock(in_channels=channels[2] + channels[1], out_channels=channels[1])
+        self.block_3 = DecoderBlock(in_channels=channels[1] + channels[0], out_channels=channels[0])
         self.conv_out = torch.nn.Conv2d(
-            in_channels=8,
+            in_channels=channels[0],
             out_channels=n_classes,
             kernel_size=3,
             padding='same',
@@ -108,10 +109,10 @@ class Decoder(torch.nn.Module):
 
 class UNet(torch.nn.Module):
     """U-Net"""
-    def __init__(self, n_classes: int):
+    def __init__(self, input_channels: int, n_classes: int, hidden_channels: List[int]):
         super().__init__()
-        self.encoder = Encoder()
-        self.decoder = Decoder(n_classes=n_classes)
+        self.encoder = Encoder(input_channels=input_channels, channels=hidden_channels)
+        self.decoder = Decoder(n_classes=n_classes, channels=hidden_channels)
 
     def forward(self, inputs):
         """Forwarding."""
@@ -122,9 +123,9 @@ class UNet(torch.nn.Module):
 
 class Conv2Layers(torch.nn.Module):
     """Classifier."""
-    def __init__(self, n_classes: int, image_size: tuple[int, int]):
+    def __init__(self, n_classes: int, image_size: Tuple[int, int], input_channels: int = 3):
         super().__init__()
-        self.conv_1 = torch.nn.Conv2d(3, 8, kernel_size=3, padding="same")
+        self.conv_1 = torch.nn.Conv2d(input_channels, 8, kernel_size=3, padding="same")
         self.pool_1 = torch.nn.MaxPool2d(kernel_size=2, stride=2)
         self.conv_2 = torch.nn.Conv2d(8, 16, kernel_size=3, padding="same")
         self.pool_2 = torch.nn.MaxPool2d(kernel_size=2, stride=2)
